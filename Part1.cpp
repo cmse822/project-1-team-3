@@ -10,24 +10,27 @@ Execute with: ./Part1.exe
 */
 
 #include <iostream>
+#include "get_walltime.c"
 
 using namespace std;
 
-const int N = 2;  //Size of the Matricies
+const int N = 100;  //Size of the Matricies
 double sum; //Placeholder for dot product of A[i][] with B[][j]
+double startTime, endTime, elapsedTime;  //Used for timing the matrix calculation
 
 void populate_matrix(double matrix[][N], int Num); //For randomly populating the matrices
 
 int main(){
-
-    //cout << "Hello" << endl;
-
-    double matrix_A[N][N];
-    double matrix_B[N][N];
-    double matrix_C[N][N];
+    
+    //Ask about static???
+    static double matrix_A[N][N];
+    static double matrix_B[N][N];
+    static double matrix_C[N][N];
 
     populate_matrix(matrix_A, N);
     populate_matrix(matrix_B, N);
+
+    get_walltime(&startTime);
 
     // Multiplying matrix_A and matrix_B to get matrix_C
 	for(int i = 0; i < N; ++i)
@@ -42,11 +45,14 @@ int main(){
 				sum = 0;
 			}
 		}
+    get_walltime(&endTime);
+    elapsedTime = endTime - startTime;
+    cout << "elapsedTime: " << elapsedTime << " seconds." << endl;
 
     return 0;
 }
 
-void populate_matrix(double matrix[][N], int Num ) {
+void populate_matrix(double matrix[][N], int Num){
     for(int i = 0; i < Num; ++i){
         for(int j = 0; j < Num; ++j){
             matrix[i][j] = rand()%10; //Assigning random number between 0-9
