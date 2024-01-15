@@ -2,6 +2,7 @@
 
 Started 1/15/2024: Mackenzie Scott, Create inital matrices
 Modified 1/15/2024: Sunia Tanweer, Added code for multiplication of matrices
+Modified 1/15/2024: Mackenzie Scott, Add get_walltime.c
 
 
 Compile with: g++ -o Part1.exe Part1.cpp 
