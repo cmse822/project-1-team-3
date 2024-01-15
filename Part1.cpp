@@ -1,6 +1,6 @@
 /*
 
-Started 1/15/2023: Mackenzie Scott, Create inital matricies 
+Started 1/15/2024: Mackenzie Scott, Create inital matricies 
 
 
 Compile with: g++ -o Part1.exe Part1.cpp 
