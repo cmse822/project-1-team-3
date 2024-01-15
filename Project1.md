@@ -23,12 +23,12 @@ Then, as a group, compute the arithmetic intensities of the following kernels in
 
 ### Solution
 
-| Kernel      | Arithmetic Intensity $[\frac{flop}{byte}]$|
-| ----------- | ----------- |
-| `Y[j] += Y[j] + A[j][i] * B[i]`      |        |
-| `s += A[i] * A[i]`   |         |
-| `s += A[i] * B[i]`   |         |
-| `Y[i] = A[i] + C*B[i]`   |        |
+| Kernel      | Number of ops | Number of bytes | Arithmetic Intensity $[\frac{flop}{byte}]$|
+| ----------- | ----------- | ----------- | ----------- |
+| `Y[j] += Y[j] + A[j][i] * B[i]`      |    3    |    32    |    $[\frac{3}{32}]$    |
+| `s += A[i] * A[i]`   |    2    |    8    |    $[\frac{1}{4}]$    |
+| `s += A[i] * B[i]`   |    2    |    16    |    $[\frac{1}{8}]$    |
+| `Y[i] = A[i] + C*B[i]`   |    2    |    24    |    $[\frac{1}{12}]$    |
 
 ## Part 1: Matrix-matrix Multiplication
 
