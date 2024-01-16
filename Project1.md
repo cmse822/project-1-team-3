@@ -36,13 +36,26 @@ Then, as a group, compute the arithmetic intensities of the following kernels in
 
 ### Solution
 
-| System specfication | Arc1  | Arc2  | Arc3  | Arc4  |
+* 1.1 Please check the code `mat.cpp`
+
+* 1.2 $2N^{3}$, so if $N=100$, this should be $2000000$. 
+
+* 1.3 We test it for 5 times on two different divices: Mackbook Pro with M1 Pro, and HPCC with amd-dev20. 
+
+|         | Run 1   | Run 2  | Run 3   | Run 4   | Run 5   | Avg.     |
+|---------|---------|--------|---------|---------|---------|----------|
+| Macbook | 194.744 | 226.09 | 176.833 | 258.996 | 292.571 | 229.8468 |
+| HPCC    |         |        |         |         |         |          |
+
+* 1.4 theoretical peak performance = #cores_per_processors x #clock_speed x 1 = 25600Mflops/s. The performance in (3) is much lower.
+
+| System specfication | Arc1 (Macbook Pro)  | Arc2  | Arc3  | Arc4  |
 | ----------- | --------- | ---- | ---- | ----- |
-| Clock Rate  |  |  |  |  |
-| Level 1 Cache |  |  |  |  |
-| Level 2 Cache |  |  |   |  |
-| Level 3 Cache |  |  |  |  |
-| Number of Cores / Threads |  |  |  |  |
+| Clock Rate  | 3.2GHz |  |  |  |
+| Level 1 Cache | 2.9MB |  |  |  |
+| Level 2 Cache | 28MB |  |   |  |
+| Level 3 Cache | 24MB |  |  |  |
+| Number of Cores / Threads | 10 |  |  |  |
 
 ![fig1](./image.png)
 

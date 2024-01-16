@@ -1,0 +1,100 @@
+# Object files
+*.o
+*.obj
+*.so
+*.ko
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared libraries (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Build Folders (adjust to your needs)
+build/
+Release/
+Debug/
+obj/
+
+# Dependency directories
+deps/
+
+# Eclipse files
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# Visual Studio Code files
+.vscode/
+
+# Autotools generated files
+Makefile.in
+Makefile
+aclocal.m4
+autom4te.cache/
+config.status
+config.log
+configure
+libtool
+*.lo
+*.la
+*.o
+*.obj
+.deps/
+.dirstamp
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# Backup & other files to ignore
+*~
+*.swp
+*.lock
