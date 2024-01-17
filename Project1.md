@@ -44,13 +44,13 @@ $2N^{3}$, so if $N=100$, this should be $2000000$.
 
 ### 1.3 Solution 
 
- We test it for 5 times on two different divices: Mackbook Pro with M1 Pro, and HPCC with amd-dev20. 
+ We test it for 5 times on two different devices: Mackbook Pro with M1 Pro, and HPCC with amd-dev20. The recorded Mflops/s are given in the table below:
 
 |             | Run 1   | Run 2  | Run 3   | Run 4   | Run 5   | Avg.     |
 |-------------|---------|--------|---------|---------|---------|----------|
 | Macbook     | 0.1947  | 0.2261 | 0.1768  | 0.2590  | 0.2926  | 0.2298   |
 | Dell XPS 15 | 0.1764  | 0.2091 | 0.1500  | 0.1649  | 0.1633  | 0.17274  |
-| HPCC        |         |        |         |         |         |          |
+| HPCC        | 177.229 | 180.361 | 161.226 | 161.422 | 160.797 | 168.207 |
 
 ### 1.4 Solution
 
