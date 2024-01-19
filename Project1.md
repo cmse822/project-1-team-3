@@ -57,13 +57,13 @@ $2N^{3}$, so if $N=100$, this should be $2000000$.
 theoretical peak performance = #cores_per_processors x #clock_speed x 1. 
 
 | System specfication          | Arc1 (Macbook Pro) | Arc2 (Dell XPS 15) | Arc3 (HPCC amd-dev20) |
-| ---------------------------- | ------------------ | ------------------ | ---- |
-| Clock Rate                   | 3.2 GHz             | 2.3 GHz            | 2.6 GHz |
-| Level 1 Cache                | 2.9MB              | 640 KB             | 64 Kb |
-| Level 2 Cache                | 28MB               | 10 MB              | 512 Kb |
-| Level 3 Cache                | 24MB               | 24 MB              | 16.384 Mb |
-| Number of Cores / Threads    | 10                 | 8                  | 64 |
-| Theoretical Peak Performance | 25.6 Gflops/s      | 18.4 Gflops/s      | 83.2 Gflops/s |
+| ---------------------------- | ------------------ | ------------------ | --------------------- |
+| Clock Rate                   | 3.2 GHz            | 2.3 GHz            | 2.6 GHz               |
+| Level 1 Cache                | 2.9MB              | 640 KB             | 64 Kb                 |
+| Level 2 Cache                | 28MB               | 10 MB              | 512 Kb                |
+| Level 3 Cache                | 24MB               | 24 MB              | 16.384 Mb             |
+| Number of Cores / Threads    | 10                 | 8                  | 64                    |
+| Theoretical Peak Performance | 25.6 Gflops/s      | 18.4 Gflops/s      | 83.2 Gflops/s         |
 
 The performance in (1.3) is much lower than the theoretical value. 
 

@@ -1,6 +1,5 @@
 import subprocess
 import re
-import seaborn as sns
 import numpy as np
 
 def run_command_multiple_times(cmd):

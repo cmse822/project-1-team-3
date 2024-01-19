@@ -83,14 +83,14 @@ void printMatrix(const Matrix& matrix) {
 // Main function 
 int main(int argc, char *argv[]) {
 
-    // Pull Matrix Size from command line 
-    int N = atoi(argv[1]);
-
     // Must feed in matrix size on the command line 
     if (argc != 2) {
         cerr << "Usage: " << argv[0] << " <MatrixSize>" << endl;
         return 1;
     }
+
+    // Pull Matrix Size from command line 
+    int N = atoi(argv[1]);
 
     // Must feed in a positive integer for the size of the matrix   
     if (N <= 0) {
