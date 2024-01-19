@@ -69,10 +69,14 @@ The performance in (1.3) is much lower than the theoretical value.
 
 ### 1.5 Solution 
 
+
+
 ![fig1](./image.png)
 
 
 ### 1.6 Solution
+
+The realistic calculation time is much smaller than the theoretical peak performance. The large matrix-matrix mutliplications in particular are heavily memory bound which decreases performance. Additionally, we are only utilizing one processor per system which greatly decreases out realistic performance since all machines used had multiple cores available. There are features in the plot (a stairstep almost) which result from the machine needing to use different levels of memory. For large values of N the computer must use lower and lower levels of cache levels which increases time since the computer must go farther and farther away in memory. 
 
 ## Part 2: The Roofline Model 
 
