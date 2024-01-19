@@ -18,15 +18,12 @@ ERT_GPU		False
 ERT_FLOPS   1,2,4,8,16,32,64,128,256,512
 ERT_ALIGN   64
 
-# ERT_CC      mpiicpc
 ERT_CC		gcc
-# ERT_CFLAGS  -O3 -mmic -fno-alias -fno-fnalias -DERT_INTEL
 ERT_CFLAGS	-o
 
-# ERT_LD      mpiicpc
 ERT_LD      gcc
-# ERT_LDFLAGS -mmic
-# ERT_LDLIBS
+ERT_LDFLAGS
+ERT_LDLIBS
 
 ERT_PRECISION FP64
 
