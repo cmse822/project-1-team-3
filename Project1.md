@@ -78,5 +78,75 @@ The performance in (1.3) is much lower than the theoretical value.
 
 *In this part, you will explore the roofline model for analyzing the interplay between arithmetic intensity and memory bandwidth for architectures with complex memory hierarchies. Complete the following exercises on the _SAME_ compute architectures that you used in Part 1 above.*
 
-### Solution
+### 2.3 Solution
+
+The configuration file for Macbook Pro is shown as follow
+```
+# Intel Gen9 test bed at ALCF
+ERT_RESULTS Results.macbook
+
+ERT_DRIVER  driver1
+ERT_KERNEL  kernel1
+
+#ERT_FLOPS   1,2,64,128,256
+ERT_FLOPS   1,2,4,8
+ERT_ALIGN   32
+
+ERT_CC      CC
+ERT_CFLAGS  -O3 
+
+ERT_LD      CC
+ERT_LDFLAGS 
+ERT_LDLIBS
+
+ERT_RUN     ./ERT_CODE
+
+ERT_PRECISION   FP32
+
+ERT_NUM_EXPERIMENTS 2
+
+ERT_MEMORY_MAX 1073741824
+
+ERT_WORKING_SET_MIN 1024
+
+ERT_TRIALS_MIN 1
+
+ERT_GNUPLOT gnuplot
+```
+
+and thus we get the following roofline plot
+
+![roofline](./roofline.jpg)
+
+Where the bandwidth should be
+* L1: 113.5GB/s
+* DRAM: 81.7GB/s
+
+and peak performance should be
+* 38.7 GFLOPs/s
+
+The ridge point is marked in the plot
+
+### 2.4 Solution
+
+The arithmetic intensity for each kernel should be
+
+![](./stat.png)
+
+So, the performance will be 
+![](./roofline2.jpg)
+
+Which means SpMV is bandwidth-bound, and the rest of three are computation bound, and will run at peak performance.
+
+SpMV will run in a middle point in the intersection of L1 and DRAM (20~30 GFLOPS/s).
+
+To optimize:
+* SpMV: optimize memory access and data transmission, for example, locality
+* the rest three: better devices
+
+### 2.5 Solution
+
+For these four kernels, all bandwidth-bounded, need to optimize locality.
+
+![](./roofline3.jpg)
 
