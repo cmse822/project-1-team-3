@@ -6,17 +6,18 @@ import matplotlib.pyplot as plt
 def main():
 
     # Create Ns
-    N_max, N_step =  1000, 20
-    Ns = np.arange(1, N_max, N_step)
-    Gflops_s = np.zeros(int(N_max/N_step))
+    N_max, N_step =  2000, 20
+    Ns = np.arange(1, N_max+2, N_step)
+
+    Gflops_s = np.zeros(int(N_max/N_step)+1)
 
     # Iterate over Ns
     for N in Ns:
-        print("Iteration", int(N/N_step), "out of", int(N_max/N_step))
-        output  = subprocess.getoutput("g++ -o Part1.exe Part1.cpp")
-        output2 = subprocess.getoutput("./Part1.exe " + str(N))
-        match = re.search(r'Gflops/s:\s+(\d+(\.\d+)?)', output2)
+        #out  = subprocess.getoutput("g++ -o Part1.exe Part1.cpp")
+        output = subprocess.getoutput("./Part1.exe " + str(N))
+        match = re.search(r'Gflops/s:\s+(\d+(\.\d+)?)', output)
         Gflops_s[int(N/N_step)] = match.group(1)
+        print("Finished Iteration", int(N/N_step), "out of", int(N_max/N_step), "with result", match.group(1))
 
     # Plot values 
     fig, ax = plt.subplots(figsize =(6, 4))

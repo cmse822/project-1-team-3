@@ -43,7 +43,7 @@ Matrix generateRandomMatrix(int N) {
 }
 
 //Function to multiply matricies together 
-Matrix multiplyMatrices(const Matrix A, const Matrix B, int &flops) {  
+Matrix multiplyMatrices(const Matrix A, const Matrix B, long int &flops) {  
 
     // Pull sizes of arrays from matricies 
     int rowsA = A.size();
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
 
     // Define start and end time and flops to calculate the number of flops per second. 
     double startTime, endTime;
-    int flops = 0;
+    long int flops = 0;
 
     // Multiply Matricies together 
     get_walltime(&startTime);

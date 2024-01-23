@@ -120,7 +120,7 @@ ERT_GNUPLOT gnuplot
 
 and thus we get the following roofline plot
 
-![roofline](./roofline.jpg)
+![roofline](./figures/roofline.jpg)
 
 Where the bandwidth should be
 * L1: 113.5GB/s
@@ -135,10 +135,10 @@ The ridge point is marked in the plot
 
 The arithmetic intensity for each kernel should be
 
-![](./stat.png)
+![](./figures/stat.png)
 
 So, the performance will be 
-![](./roofline2.jpg)
+![](./figures/roofline2.jpg)
 
 Which means SpMV is bandwidth-bound, and the rest of three are computation bound, and will run at peak performance.
 
@@ -152,5 +152,5 @@ To optimize:
 
 For these four kernels, all bandwidth-bounded, need to optimize locality.
 
-![](./roofline3.jpg)
+![](./figures/roofline3.jpg)
 
