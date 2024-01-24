@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def main():
 
     # Create Ns
-    N_max, N_step =  2000, 20
+    N_max, N_step =  5000, 100
     Ns = np.arange(1, N_max+2, N_step)
 
     Gflops_s = np.zeros(int(N_max/N_step)+1)
