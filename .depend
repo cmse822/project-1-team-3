@@ -1,1 +1,0 @@
-mat.o: mat.cpp get_walltime.h

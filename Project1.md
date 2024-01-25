@@ -69,10 +69,14 @@ The performance in (1.3) is much lower than the theoretical value.
 
 ### 1.5 Solution 
 
-![fig1](./image.png)
+
+
+![fig1](./figures/Performance.png)
 
 
 ### 1.6 Solution
+
+The realistic calculation time is much smaller than the theoretical peak performance. The large matrix-matrix mutliplications in particular are heavily memory bound which decreases performance. Additionally, we are only utilizing one processor per system which greatly decreases out realistic performance since all machines used had multiple cores available. There are features in the plot which result from the machine needing to use different levels of cache/memory  (L1, L2, etc.). For large values of N the computer must use lower and lower levels of cache levels which increases time since the computer must go farther and farther away in memory. 
 
 ## Part 2: The Roofline Model 
 
@@ -116,7 +120,7 @@ ERT_GNUPLOT gnuplot
 
 and thus we get the following roofline plot
 
-![roofline](./roofline.jpg)
+![roofline](./figures/roofline.jpg)
 
 Where the bandwidth should be
 * L1: 113.5GB/s
@@ -131,10 +135,10 @@ The ridge point is marked in the plot
 
 The arithmetic intensity for each kernel should be
 
-![](./stat.png)
+![](./figures/stat.png)
 
 So, the performance will be 
-![](./roofline2.jpg)
+![](./figures/roofline2.jpg)
 
 Which means SpMV is bandwidth-bound, and the rest of three are computation bound, and will run at peak performance.
 
@@ -148,5 +152,5 @@ To optimize:
 
 For these four kernels, all bandwidth-bounded, need to optimize locality.
 
-![](./roofline3.jpg)
+![](./figures/roofline3.jpg)
 
