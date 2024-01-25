@@ -69,9 +69,13 @@ The performance in (1.3) is much lower than the theoretical value.
 
 ### 1.5 Solution 
 
+Here we can see the matrix-matrix performance plotted with the theoretical peak performance of the Dell XPS 15. 
 
+![fig1](./figures/Performance_With_Theoretical.png)
 
-![fig1](./figures/Performance.png)
+I also have plotted the image without the theoretical performance so that we are able to make out the features of the graph. 
+
+![](./figures/Performance_Without_Theoretical.png)
 
 
 ### 1.6 Solution
