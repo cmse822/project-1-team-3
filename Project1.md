@@ -71,11 +71,13 @@ The performance in (1.3) is much lower than the theoretical value.
 
 Here we can see the matrix-matrix performance plotted with the theoretical peak performance of the Dell XPS 15. 
 
-![fig1](./figures/Performance_With_Theoretical.png)
+<!-- ![fig1](./figures/Performance_With_Theoretical.png) -->
+![fig1](./figures/Performance_With_Theoretical_system76.png)
 
 I also have plotted the image without the theoretical performance so that we are able to make out the features of the graph. 
 
-![](./figures/Performance_Without_Theoretical.png)
+<!-- ![](./figures/Performance_Without_Theoretical.png) -->
+![](./figures/Performance_Without_Theoretical_system76.png)
 
 
 ### 1.6 Solution
@@ -88,10 +90,10 @@ The realistic calculation time is much smaller than the theoretical peak perform
 
 ### 2.3 Solution
 
-The configuration file for Macbook Pro is shown as follow
+The configuration file used for System 76 (wilddog pro) is shown as follow
 ```
-# Intel Gen9 test bed at ALCF
-ERT_RESULTS Results.macbook
+#
+ERT_RESULTS Results.roofline
 
 ERT_DRIVER  driver1
 ERT_KERNEL  kernel1
@@ -100,10 +102,10 @@ ERT_KERNEL  kernel1
 ERT_FLOPS   1,2,4,8
 ERT_ALIGN   32
 
-ERT_CC      CC
+ERT_CC      g++
 ERT_CFLAGS  -O3 
 
-ERT_LD      CC
+ERT_LD      g++
 ERT_LDFLAGS 
 ERT_LDLIBS
 
@@ -124,7 +126,8 @@ ERT_GNUPLOT gnuplot
 
 and thus we get the following roofline plot
 
-![roofline](./figures/roofline.jpg)
+<!-- ![roofline](./figures/roofline.jpg) -->
+![roofline](./figures/roofline_system76.jpg)
 
 Where the bandwidth should be
 * L1: 113.5GB/s
@@ -133,7 +136,7 @@ Where the bandwidth should be
 and peak performance should be
 * 38.7 GFLOPs/s
 
-The ridge point is marked in the plot
+the ridge points are all marked in the plot.
 
 ### 2.4 Solution
 
@@ -142,7 +145,8 @@ The arithmetic intensity for each kernel should be
 ![](./figures/stat.png)
 
 So, the performance will be 
-![](./figures/roofline2.jpg)
+<!-- ![](./figures/roofline2.jpg) -->
+![](./figures/textbook_kernels_system76.jpg)
 
 Which means SpMV is bandwidth-bound, and the rest of three are computation bound, and will run at peak performance.
 
@@ -154,7 +158,11 @@ To optimize:
 
 ### 2.5 Solution
 
-For these four kernels, all bandwidth-bounded, need to optimize locality.
+For these four kernels in Part 1, all bandwidth-bounded, need to optimize locality.
 
-![](./figures/roofline3.jpg)
+<!-- ![](./figures/roofline3.jpg) -->
+![](./figures/part1_kernels_system76.jpg)
+
+### 2.6 Solution
+
 
