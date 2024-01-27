@@ -69,12 +69,12 @@ The performance in (1.3) is much lower than the theoretical value.
 
 ### 1.5 Solution 
 
-Here we can see the matrix-matrix performance plotted with the theoretical peak performance of the Dell XPS 15. 
+Here we can see the matrix-matrix performance plotted with the theoretical peak performance of System 76 Wild-dog Pro. 
 
 <!-- ![fig1](./figures/Performance_With_Theoretical.png) -->
 ![fig1](./figures/Performance_With_Theoretical_system76.png)
 
-I also have plotted the image without the theoretical performance so that we are able to make out the features of the graph. 
+We are also plotting the image without the theoretical performance to make out the features of the graph, if any. 
 
 <!-- ![](./figures/Performance_Without_Theoretical.png) -->
 ![](./figures/Performance_Without_Theoretical_system76.png)
@@ -82,7 +82,7 @@ I also have plotted the image without the theoretical performance so that we are
 
 ### 1.6 Solution
 
-The realistic calculation time is much smaller than the theoretical peak performance. The large matrix-matrix mutliplications in particular are heavily memory bound which decreases performance. Additionally, we are only utilizing one processor per system which greatly decreases out realistic performance since all machines used had multiple cores available. There are features in the plot which result from the machine needing to use different levels of cache/memory  (L1, L2, etc.). For large values of N the computer must use lower and lower levels of cache levels which increases time since the computer must go farther and farther away in memory. 
+The realistic calculation time is much smaller than the theoretical peak performance. The large matrix-matrix mutliplications in particular are heavily memory bound which decreases performance. Additionally, we only utilise one processor per system which greatly decreases the realistic performance since all machines used had multiple cores available. There are features in the plot which result from the machine needing to use different levels of cache/memory  (L1, L2, etc.). For large values of $N$, the computer must use lower and lower levels of cache levels which increases time since the computer must go farther and farther away in memory. 
 
 ## Part 2: The Roofline Model 
 
@@ -90,7 +90,7 @@ The realistic calculation time is much smaller than the theoretical peak perform
 
 ### 2.3 Solution
 
-The configuration file used for System 76 (wilddog pro) is shown as follow
+The configuration file used for System 76 (Wild-dog Pro) is shown as follows
 ```
 #
 ERT_RESULTS Results.roofline
@@ -124,45 +124,35 @@ ERT_TRIALS_MIN 1
 ERT_GNUPLOT gnuplot
 ```
 
-and thus we get the following roofline plot
+We acquired the following roofline plot from ERT
 
 <!-- ![roofline](./figures/roofline.jpg) -->
 ![roofline](./figures/roofline_system76.jpg)
 
-Where the bandwidth should be
-* L1: 113.5GB/s
-* DRAM: 81.7GB/s
-
-and peak performance should be
-* 38.7 GFLOPs/s
-
-the ridge points are all marked in the plot.
+The peak performance and the bandwidths for L1, L2, L3, L4, L5 and DRAM are shown in the plot along with the ridge points for each (encircled). 
 
 ### 2.4 Solution
 
-The arithmetic intensity for each kernel should be
+The arithmetic intensity for each kernel is shown below (copied from textbook):
 
 ![](./figures/stat.png)
 
-So, the performance will be 
+The performance band for each kernel is marked in the roofline plot below
 <!-- ![](./figures/roofline2.jpg) -->
 ![](./figures/textbook_kernels_system76.jpg)
 
-Which means SpMV is bandwidth-bound, and the rest of three are computation bound, and will run at peak performance.
-
-SpMV will run in a middle point in the intersection of L1 and DRAM (20~30 GFLOPS/s).
+Based on the arithmetic intensities, SpMV is bandwidth-bound, while the remaining three kernels are computation-bound (will run at peak performance).
 
 To optimize:
 * SpMV: optimize memory access and data transmission, for example, locality
-* the rest three: better devices
+* others: better devices
 
 ### 2.5 Solution
 
-For these four kernels in Part 1, all bandwidth-bounded, need to optimize locality.
+All four kernels in Part 1 are bandwidth-bounded (marked in the figure below). To improve performance, memory access and data transmission needs to be optimized.
 
 <!-- ![](./figures/roofline3.jpg) -->
 ![](./figures/part1_kernels_system76.jpg)
 
 ### 2.6 Solution
-
 
