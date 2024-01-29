@@ -32,7 +32,9 @@ def main():
     ax.set_ylabel('Gflops/s')
     ax.set_xlabel('N')
     ax.plot(Ns, Gflops_s, label = "Performance Result from Matrix-Matrix Calculation ")
-    plt.axhline(y = 18.4, color = 'r', linestyle = '-', label = "Theoretical Peak Performance")
+
+    ## For System 76 wild-dog pro, clock speed is 4.6 GHz
+    plt.axhline(y = 4.6, color = 'r', linestyle = '-', label = "Theoretical Peak Performance")
     plt.yscale("log")
     plt.legend()
     plt.savefig("Performance_With_Theoretical.png")
