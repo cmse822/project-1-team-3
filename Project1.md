@@ -156,3 +156,4 @@ All four kernels in Part 1 are bandwidth-bounded (marked in the figure below). T
 
 ### 2.6 Solution
 
+The bandwidth drops as we hit the differnet levels of cache. This is what is shown in the rooflin model and we see these dips in the matrix-matrix multiplication performed in part 1. The different bandwidths are what cause the matrix-matrix multiplication to decrease in Gflops/s as the value of N increases. 
